@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -16,11 +17,17 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
+    protected $primaryKey = 'id';
+    protected $keyType = 'int';
+    public $timestamps = true;
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
+
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,5 +50,22 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+ // Many-to-many relation with roles
+ public function roles():BelongsToMany
+ {
+     return $this->belongsToMany(Role::class);
+ }
+ public function factories()
+    {
+        return $this->hasMany(Factory::class,'user_id','id'); // A user can have many factories
+    }
+
+    // One-to-one relation with Importer
+    public function importers()
+    {
+        return $this->hasMany(Importer::class);
     }
 }

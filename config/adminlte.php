@@ -264,7 +264,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -385,6 +385,33 @@ return [
         ],
         [
             'text' => 'information',
+            'icon_color' => 'cyan',
+            'url' => '#',
+        ],
+
+        ['header' => 'Users'],
+        [
+            'text' => 'Factory',
+            'icon_color' => 'cyan',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Importer',
+            'icon_color' => 'cyan',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Buyer',
+            'icon_color' => 'cyan',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Shipping Company',
+            'icon_color' => 'cyan',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Admin',
             'icon_color' => 'cyan',
             'url' => '#',
         ],
