@@ -1,4 +1,5 @@
 1- https://github.com/jeroennoten/Laravel-AdminLTE?tab=readme-ov-file
+1- https://adminlte.io/docs/3.2/
 
 2- AdminLTE instaltion in laravel
    https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation
