@@ -9,3 +9,4 @@
 3- php artisan adminlte:install
 4- composer require laravel/ui
 5- php artisan ui bootstrap --authphp artisan adminlte:install --only=auth_views
+6- run npm i && npm build
