@@ -7,4 +7,4 @@
 2- composer require jeroennoten/laravel-adminlte
 3- php artisan adminlte:install
 4- composer require laravel/ui
-php artisan ui bootstrap --auth
+5- php artisan ui bootstrap --authphp artisan adminlte:install --only=auth_views
