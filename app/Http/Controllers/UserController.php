@@ -47,7 +47,11 @@ class UserController extends Controller
         // Return DataTables response
         return DataTables::of($users)
             ->addColumn('actions', function ($user) {
-                return '<a href="/users/'.$user->id.'/edit">Edit</a>';
+                return '<a href="#"><i class="fas fa-fw fa-pen text-dark"></i></a>
+                <a href="#"><i class="fas fa-fw  fa-eye text-blue mx-2"></i></a>
+                <a href="#" ><i class="fas fa-fw fa-trash text-danger"></i></a>
+                ';
+                // return '<a href="/users/'.$user->id.'/edit"><i class="fa-solid fa-pen-to-square"></i></a>';
             })
            
             ->editColumn('roles', function($user) {

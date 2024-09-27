@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Session;
-class LocaLocalization
+class Localization
 {
     /**
      * Handle an incoming request.
@@ -20,6 +20,8 @@ class LocaLocalization
             \App::setLocale(Session::get('locale'));
         }
         return $next($request);
+
+        
 
     }
 }

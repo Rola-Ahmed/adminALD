@@ -304,6 +304,47 @@ return [
 
     'menu' => [
         // Navbar items:
+        // [
+        //     'text' => 'Language',
+        //     'icon' => 'fas fa-language',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'English',
+        //             'url' => route('lang.switch', ['locale' => 'en']),
+        //         ],
+        //         [
+        //             'text' => 'arabic',
+        //             'url' => route('lang.switch', ['locale' => 'ar']),
+        //         ],
+        //         // Add more languages as needed...
+        //     ],
+        // ],
+
+        [
+            'topnav_right' => true,
+
+            // 'text' => __("translation.dashboard"),
+            'icon' => 'fas fa-fw fa-globe',
+            'text' => 'Dashboard', // Fallback value
+            'url' => 'admin/dashboard',
+            'dynamic' => true, // Use this to indicate dynamic text
+            'submenu' => [
+                [
+                    'text' => ['translation:profile_key', ['name' => 'User']],
+                    'url' => 'localization/en',
+                ],
+               
+              
+                
+               
+                [
+                    'text' =>  'translation.ar',
+                    'url' => 'localization/ar',
+
+                ],
+            ],
+        ],
+
         [
             'text' => 'pages',
             'url' => 'admin/pages',

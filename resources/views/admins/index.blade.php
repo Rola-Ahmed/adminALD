@@ -4,16 +4,12 @@
 {{-- Customize layout sections --}}
 
 @section('subtitle', 'Welcome')
-@section('content_header_title', 'Users')
-@section('content_header_subtitle', 'Users')
+@section('content_header_title', 'Home')
+@section('content_header_subtitle', 'Welcome')
 
 {{-- Content body: main page content --}}
 
 @section('content_body')
-
-
-@include('includes.localizationBtn')
-
 <table id="users-table" class="display">
     <thead>
         <tr>
@@ -41,39 +37,20 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#users-table').DataTable({
-            processing: true
-            , serverSide: true
-            , ajax: '{{ route('users.data') }}'
-            , columns: [{
-                    data: 'id'
-                    , name: 'id'
-                }
-                , {
-                    data: 'email'
-                    , name: 'email'
-                }
-                , {
-                    data: 'name'
-                    , name: 'name'
-                }
-                , {
-                    data: 'roles'
-                    , name: 'roles'
-                    , orderable: false
-                    , searchable: true
-                }
-                , {
-                    data: 'actions'
-                    , name: 'actions'
-                    , orderable: false
-                    , searchable: false
-                }
-            , ]
+            processing: true,
+            serverSide: true,
+            ajax: '{{ route('users.data') }}',
+            columns: [
+                { data: 'id', name: 'id' },
+                { data: 'email', name: 'email' },
+                { data: 'name', name: 'name' },
+                { data: 'roles', name: 'roles', orderable: false, searchable: true }, 
+                { data: 'actions', name: 'actions', orderable: false, searchable: false },
+            ]
         });
     });
-
 </script>
 
 @endpush
