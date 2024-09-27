@@ -18,7 +18,16 @@ return [
     'dashboard'=>'English',
     'users'=>'Users',
     'allUsers'=>'All Users',
-    'welcomeback'=>'Welcome Back'
+    'welcomeback'=>'Welcome Back',
+    'id' => 'ID',
+    'email' => 'Email',
+    'name' => 'Name',
+    'role' => 'Role',
+    'actions' => 'Actions',
+    'importer_id' => 'Importer ID',
+    'account_email' => 'Account Email',
+    'company_name' => 'Company Name',
+    'licenses' => 'Licenses',
 
 
 ];

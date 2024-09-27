@@ -27,8 +27,15 @@ Route::middleware(Localization::class)->group(function () {
 
 
     Route::delete('importers/delete/{id}', ['uses' => 'ImporterController@destroy'])->name('importers.delete');
-    Route::get('/importers', ['uses' => 'ImporterController@index'])->name('all.importers');
+
+    Route::get('importers', ['uses' => 'ImporterController@index'])->name('all.importers');
     Route::get('importers/data', ['uses' => 'ImporterController@getimportersData'])->name('importers.data');
+
+    Route::get('shippingCompanies', ['uses' => 'ShippingCompanyController@index'])->name('all.shippingCompanies');
+    Route::get('shippingCompanies/data', ['uses' => 'ShippingCompanyController@getShippingData'])->name('shippingCompanies.data');
+    Route::delete('importers/delete/{id}', ['uses' => 'ShippingCompanyController@destroy'])->name('shipping.delete');
+
+
     Route::get('localization/{locale}', ['uses' => 'LocalizationController@switchLang'])->name('lang.switch');
     
     });

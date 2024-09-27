@@ -17,11 +17,13 @@
 <table id="users-table" class="display">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>role</th>
-            <th>Actions</th>
+
+
+            <th>__('translation.id')</th>
+            <th>__('translation.email')</th>
+            <th>__('translation.name')</th>
+            <th>__('translation.role')</th>
+            <th>__('translation.actions')</th>
         </tr>
     </thead>
 </table>

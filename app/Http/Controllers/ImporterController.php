@@ -34,20 +34,30 @@ class ImporterController extends Controller
     public function getimportersData(Request $request)
 {
             // <a href="'.route('importers.delete', ['id' => $importer->id]).'">
+            // <a href="#" data-id="' . $importer->id . '" class="delete-importer">
 
     $importers = Importer::with('user')->get();
     return DataTables::of($importers)
+
         ->addColumn('actions', function ($importer) {
-           return '<a href="#">
-                <i class="fas fa-fw fa-pen text-dark"></i>
-            </a>
-            <a href="#">
-                <i class="fas fa-fw fa-eye text-blue mx-2"></i>
-            </a>
-            <a href="#" data-id="' . $importer->id . '" class="delete-importer">
-                <i class="fas fa-fw fa-trash text-danger"></i>
-            </a>';
+            return '
+                <a href="#">
+                    <i class="fas fa-fw fa-pen text-dark"></i>
+                </a>
+                <a href="#">
+                    <i class="fas fa-fw fa-eye text-blue mx-2"></i>
+                </a>
+                <form action="'.route('importers.delete', ['id' => $importer->id]).'" method="POST" style="display:inline;" onsubmit="return confirm(\'Are you sure?\');">
+                    '.csrf_field().'
+                    '.method_field('DELETE').'
+                    <button type="submit" style="border: none; background: none; cursor: pointer;">
+                        <i class="fas fa-fw fa-trash text-danger"></i>
+                    </button>
+                </form>
+            ';
         })
+        
+
         ->editColumn('accountEmail', function($importer) {
             return $importer->user ? $importer->user->email : 'N/A'; // Accessing user email
         })
@@ -55,21 +65,7 @@ class ImporterController extends Controller
         ->make(true);
 }
 
-public function destroyi($id)
-{
-    $importer = Importer::find($id);
 
-    if ($importer) {
-
-        $importer->delete(); // This deletes the model instance
-    }
-    else{
-    return redirect()->route('importers.index')->with('error', 'Importer not found');
-
-    }
-
-    return redirect()->route('importers.index')->with('success', 'Importer deleted successfully');
-}
 
 
 public function destroy($id)
@@ -80,15 +76,15 @@ public function destroy($id)
 
         // dd($importer);
         if ($importer) {
-            $importer->destroy($id); // Deletes the importer
-            return redirect()->route('importers.index')->with('success', 'Importer deleted successfully');
+            $importer->delete(); // Deletes the importer
+            return redirect()->route('all.importers')->with('success', 'Importer deleted successfully');
         }
-        return redirect()->route('importers.index')->with('error', 'Importer not found');
+        return redirect()->route('all.importers')->with('error', 'Importer not found');
     } catch (\Exception $e) {
         // Handle exception and log the error if needed
         \Log::error('Error deleting importer: '.$e->getMessage());
 
-        return redirect()->route('importers.index')->with('error', 'An error occurred while trying to delete the importer.');
+        return redirect()->route('all.importers')->with('error', 'An error occurred while trying to delete the importer.');
     }
 }
 

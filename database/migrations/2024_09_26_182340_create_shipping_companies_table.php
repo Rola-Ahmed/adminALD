@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('shippingCotunries',500)->nullable()->default(json_encode([])); // Use JSON format array
             $table->string('shippingCities',500)->nullable()->default(json_encode([])); // Use JSON format array
             $table->string('company_name',500)->nullable(); // Use JSON format array
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Links to the user table
+
 
             $table->timestamps();
         });

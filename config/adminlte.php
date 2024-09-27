@@ -391,7 +391,7 @@ return [
                 [
                     'text' => 'shippingCompany',
                     'icon_color' => 'cyan',
-                    'url' => '#',
+                    'route' => 'all.shippingCompanies',
                 ],
                 [
                     'text' => 'admins',

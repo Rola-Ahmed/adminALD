@@ -12,4 +12,8 @@ class ShippingCompanies extends Model
     protected $primaryKey = 'id';
     protected $keyType = 'int';
     public $timestamps = true;
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id','id'); // A factory belongs to a single user
+    }
 }
