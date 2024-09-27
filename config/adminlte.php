@@ -356,87 +356,123 @@ return [
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        // [
+        //     'text' => 'Users',
+        //     'icon' => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url' => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url' => '#',
+        //                 ],
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url' => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url' => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url' => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url' => '#',
+        //         ],
+        //     ],
+        // ],
+        // ['header' => 'labels'],
+        // [
+        //     'text' => 'important',
+        //     'icon_color' => 'red',
+        //     'url' => '#',
+        // ],
+        // [
+        //     'text' => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url' => '#',
+        // ],
+        // [
+        //     'text' => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url' => '#',
+        // ],
+
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
+            'text' => 'Users',
+            'icon' => 'fas fa-fw fa-users',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'All',
+                    'icon_color' => 'cyan',
+                    // 'url' => 'users',
+                    'route'=>'all.users'
+                ],
+                [
+                    'text' => 'Factory',
+                    'icon_color' => 'cyan',
+                    // 'url' => 'users',
+                ],
+                [
+                    'text' => 'Importer',
+                    'icon_color' => 'cyan',
+                    'url' => '#',
+                ],
+                
+                [
+                    'text' => 'Shipping Company',
+                    'icon_color' => 'cyan',
                     'url' => '#',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
+                    'text' => 'Admin',
+                    'icon_color' => 'cyan',
                     'url' => '#',
                 ],
             ],
         ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
 
-        ['header' => 'Users'],
-        [
-            'text' => 'Factory',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Importer',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Buyer',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Shipping Company',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Admin',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
+
+        // ['header' => 'Users'],
+        // [
+        //     'text' => 'All',
+        //     'icon_color' => 'cyan',
+        //     'url' => '#',
+        // ],
+        // [
+        //     'text' => 'Factory',
+        //     'icon_color' => 'cyan',
+        //     'url' => '#',
+        // ],
+        // [
+        //     'text' => 'Importer',
+        //     'icon_color' => 'cyan',
+        //     'url' => '#',
+        // ],
+        
+        // [
+        //     'text' => 'Shipping Company',
+        //     'icon_color' => 'cyan',
+        //     'url' => '#',
+        // ],
+        // [
+        //     'text' => 'Admin',
+        //     'icon_color' => 'cyan',
+        //     'url' => '#',
+        // ],
     ],
 
     /*
@@ -495,22 +531,22 @@ return [
             ],
         ],
         'Select2' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => true,
+                    'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
                 ],
             ],
         ],
         'Chartjs' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',

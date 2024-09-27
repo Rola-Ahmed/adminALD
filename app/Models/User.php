@@ -54,10 +54,17 @@ class User extends Authenticatable
 
 
  // Many-to-many relation with roles
- public function roles():BelongsToMany
- {
-     return $this->belongsToMany(Role::class);
- }
+//  public function roles():BelongsToMany
+//  {
+//      return $this->belongsToMany(Role::class);
+//  }
+
+
+ public function roles() :BelongsToMany
+{
+    return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
+}
+
  public function factories()
     {
         return $this->hasMany(Factory::class,'user_id','id'); // A user can have many factories

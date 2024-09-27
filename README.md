@@ -1,4 +1,4 @@
-1- https://github.com/jeroennoten/Laravel-AdminLTE?tab=readme-ov-file
+ 1- https://github.com/jeroennoten/Laravel-AdminLTE?tab=readme-ov-file
 1- https://adminlte.io/docs/3.2/
 
 2- AdminLTE instaltion in laravel
@@ -10,3 +10,8 @@
 4- composer require laravel/ui
 5- php artisan ui bootstrap --authphp artisan adminlte:install --only=auth_views
 6- run npm i && npm build
+
+
+7- composer require yajra/laravel-datatables-oracle
+
+8- php artisan vendor:publish --tag=datatables
