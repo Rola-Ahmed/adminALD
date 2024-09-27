@@ -185,6 +185,13 @@
 
 @section('content_body')
     <p>Welcome to this beautiful admin panel.</p>
+
+    <div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader">
+          <img src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        </div>
+      </div
 @stop
 
 {{-- Push extra CSS --}}

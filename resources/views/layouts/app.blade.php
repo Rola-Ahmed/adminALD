@@ -37,35 +37,34 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -78,58 +77,72 @@
     </div>
 </body>
 </html> --}}
-
 @extends('adminlte::page')
 
 {{-- Extend and customize the browser title --}}
+{{-- <header class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ url('/') }}" class="nav-link">Home</a>
+</li>
+<li class="nav-item d-none d-sm-inline-block">
+    <a href="#" class="nav-link">Contact</a>
+</li>
+</ul>
+</header> --}}
 
 @section('title')
-    {{ config('adminlte.title') }}
-    @hasSection('subtitle') | @yield('subtitle') @endif
+{{ config('adminlte.title') }}
+@hasSection('subtitle') | @yield('subtitle') @endif
 @stop
 
 {{-- Extend and customize the page content header --}}
 
 @section('content_header')
-    @hasSection('content_header_title')
-        <h1 class="text-muted">
-            @yield('content_header_title')
 
-            @hasSection('content_header_subtitle')
-                <small class="text-dark">
-                    <i class="fas fa-xs fa-angle-right text-muted"></i>
-                    @yield('content_header_subtitle')
-                </small>
-            @endif
-        </h1>
+
+{{-- in the app.balde u will find @section('content_header_title', 'Home')  --}}
+@hasSection('content_header_title')
+<h1 class="text-muted bg-success">
+    @yield('content_header_title')
+
+    @hasSection('content_header_subtitle')
+    <small class="text-dark">
+        <i class="fas fa-xs fa-angle-right text-muted"></i>
+        @yield('content_header_subtitle')
+    </small>
     @endif
+</h1>
+@endif
 @stop
 
 {{-- Rename section content to content_body --}}
 
 @section('content')
-    @yield('content_body')
+@yield('content_body')
 @stop
 
 {{-- Create a common footer --}}
 
 @section('footer')
-    <div class="float-right">
-        Version: {{ config('app.version', '1.0.0') }}
-    </div>
+<div class="float-right">
+    Version: {{ config('app.version', '1.0.0') }}
+</div>
 
-    <strong>
-        <a href="{{ config('app.company_url', '#') }}">
-            {{ config('app.company_name', 'My company') }}
-        </a>
-    </strong>
+<strong>
+    <a href="{{ config('app.company_url', '#') }}">
+        {{ config('app.company_name', 'My company') }}
+    </a>
+</strong>
 @stop
 
 {{-- Add common Javascript/Jquery code --}}
 
 @push('js')
 <script>
-
     $(document).ready(function() {
         // Add your common script logic here...
     });
@@ -142,15 +155,15 @@
 @push('css')
 <style type="text/css">
 
-    {{-- You can add AdminLTE customizations here --}}
-    /*
-    .card-header {
-        border-bottom: none;
-    }
-    .card-title {
-        font-weight: 600;
-    }
-    */
+{{-- You can add AdminLTE customizations here --}}
+/*
+.card-header {
+border-bottom: none;
+}
+.card-title {
+font-weight: 600;
+}
+*/
 
 </style>
 @endpush
