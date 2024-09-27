@@ -304,21 +304,7 @@ return [
 
     'menu' => [
         // Navbar items:
-        // [
-        //     'text' => 'Language',
-        //     'icon' => 'fas fa-language',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'English',
-        //             'url' => route('lang.switch', ['locale' => 'en']),
-        //         ],
-        //         [
-        //             'text' => 'arabic',
-        //             'url' => route('lang.switch', ['locale' => 'ar']),
-        //         ],
-        //         // Add more languages as needed...
-        //     ],
-        // ],
+     
 
         [
             'topnav_right' => true,
@@ -341,11 +327,7 @@ return [
             ],
         ],
 
-        // [
-        //     'text' => 'pages',
-        //     'url' => 'admin/pages',
-        //     'topnav_right' => true,
-        // ],
+        
         [
             'type' => 'navbar-search',
             'text' => 'search', //placeholder
@@ -355,14 +337,7 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-        // [ 
-        //     'text' => 'Dashboard', 
-        //     'url' => 'admin/dashboard', 
-        //     'icon' => 'fas fa-tachometer-alt', 
-        //     'style'=>'text-start',
-        //     'topnav_right' => true,
-
-        // ], 
+       
     
 
         // Sidebar items:
@@ -375,13 +350,7 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
-        [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
+       
         ['header' => 'labels'],
         [
             'text' => 'important',
@@ -432,34 +401,6 @@ return [
             ],
         ],
 
-
-        // ['header' => 'Users'],
-        // [
-        //     'text' => 'All',
-        //     'icon_color' => 'cyan',
-        //     'url' => '#',
-        // ],
-        // [
-        //     'text' => 'Factory',
-        //     'icon_color' => 'cyan',
-        //     'url' => '#',
-        // ],
-        // [
-        //     'text' => 'Importer',
-        //     'icon_color' => 'cyan',
-        //     'url' => '#',
-        // ],
-        
-        // [
-        //     'text' => 'Shipping Company',
-        //     'icon_color' => 'cyan',
-        //     'url' => '#',
-        // ],
-        // [
-        //     'text' => 'Admin',
-        //     'icon_color' => 'cyan',
-        //     'url' => '#',
-        // ],
     ],
 
     /*

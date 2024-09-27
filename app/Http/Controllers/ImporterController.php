@@ -38,15 +38,15 @@ class ImporterController extends Controller
     $importers = Importer::with('user')->get();
     return DataTables::of($importers)
         ->addColumn('actions', function ($importer) {
-            return '<a href="#">
-            <i class="fas fa-fw fa-pen text-dark"></i>
-        </a>
-        <a href="#">
-            <i class="fas fa-fw fa-eye text-blue mx-2"></i>
-        </a>
-        <a href="#" data-id="' . $importer['id'] . '" class="delete-importer">
-            <i class="fas fa-fw fa-trash text-danger"></i>
-        </a>';
+           return '<a href="#">
+                <i class="fas fa-fw fa-pen text-dark"></i>
+            </a>
+            <a href="#">
+                <i class="fas fa-fw fa-eye text-blue mx-2"></i>
+            </a>
+            <a href="#" data-id="' . $importer->id . '" class="delete-importer">
+                <i class="fas fa-fw fa-trash text-danger"></i>
+            </a>';
         })
         ->editColumn('accountEmail', function($importer) {
             return $importer->user ? $importer->user->email : 'N/A'; // Accessing user email
@@ -80,11 +80,10 @@ public function destroy($id)
 
         // dd($importer);
         if ($importer) {
-            $importer->destroy(); // Deletes the importer
+            $importer->destroy($id); // Deletes the importer
             return redirect()->route('importers.index')->with('success', 'Importer deleted successfully');
-        } else {
-            return redirect()->route('importers.index')->with('error', 'Importer not found');
         }
+        return redirect()->route('importers.index')->with('error', 'Importer not found');
     } catch (\Exception $e) {
         // Handle exception and log the error if needed
         \Log::error('Error deleting importer: '.$e->getMessage());

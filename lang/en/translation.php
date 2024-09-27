@@ -17,6 +17,8 @@ return [
     'en' => 'English',
     'dashboard'=>'English',
     'users'=>'Users',
-    'allUsers'=>'All Users'
+    'allUsers'=>'All Users',
+    'welcomeback'=>'Welcome Back'
+
 
 ];

@@ -61,20 +61,22 @@
 
 
 
-<a href="#" class="btn btn-danger delete-importer" data-id="{{ $importer->id }}">
+{{-- <a href="#" class="btn btn-danger delete-importer" data-id="{{ $importer->id }}">
     <i class="fas fa-trash"></i>
-</a>
+</a> --}}
 
 <script>
     $(document).on('click', '.delete-importer', function(e) {
         e.preventDefault();
 
         var importerId = $(this).data('id');
+        console.log("importerId",importerId)
+    //    var url: '/importers/delete/' + importerId,
         var url = '{{ route("importers.delete", ":id") }}'.replace(':id', importerId);
 
         if (confirm('Are you sure you want to delete this importer?')) {
             $.ajax({
-                url: url,
+                url: '/importers/delete/'+importerId,
                 type: 'DELETE',
                 
                 data: {
