@@ -19,11 +19,11 @@
         <tr>
 
 
-            <th>__('translation.id')</th>
-            <th>__('translation.email')</th>
-            <th>__('translation.name')</th>
-            <th>__('translation.role')</th>
-            <th>__('translation.actions')</th>
+            <th>{{__('translation.id')}}</th>
+            <th>{{__('translation.email')}}</th>
+            <th>{{__('translation.name')}}</th>
+            <th>{{__('translation.role')}}</th>
+            <th>{{__('translation.actions')}}</th>
         </tr>
     </thead>
 </table>

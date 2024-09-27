@@ -27,5 +27,6 @@ return [
     'account_email' => 'البريد الإلكتروني للحساب',
     'company_name' => 'اسم الشركة',
     'licenses' => 'التراخيص',
+    'shipping_countries' => 'دول الشحن',
 
 ];

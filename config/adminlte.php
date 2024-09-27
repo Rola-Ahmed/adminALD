@@ -377,11 +377,7 @@ return [
                     // 'url' => 'users',
                     'route'=>'all.users'
                 ],
-                [
-                    'text' => 'factories',
-                    'icon_color' => 'cyan',
-                    'url' => 'users',
-                ],
+               
                 [
                     'text' => 'importers',
                     'icon_color' => 'cyan',
@@ -395,6 +391,11 @@ return [
                 ],
                 [
                     'text' => 'admins',
+                    'icon_color' => 'cyan',
+                    'url' => '#',
+                ],
+                [
+                    'text' => 'factories',
                     'icon_color' => 'cyan',
                     'url' => '#',
                 ],

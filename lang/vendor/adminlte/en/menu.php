@@ -21,12 +21,13 @@ return [
     'en' => 'English',
     'users'=>'Users',
     'allUsers'=>'All Users',
-    'defaultUsers'=>'defaultUsers',
+    'defaultUsers'=>'All Users',
     'userTypes'=>'User Types',
     'factories'=>'Factories',
     'admins'=>'Admins',
     'shippingCompany'=>'Shipping Company',
     'importers'=>'Importers',
+    'home'=>'home'
 
     
 

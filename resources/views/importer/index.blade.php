@@ -24,11 +24,11 @@
 <table id="importers-table" class="display">
     <thead>
         <tr>
-            <th>__('translation.importer_id')</th>
-            <th>__('translation.account_email')</th>
-            <th>__('translation.company_name')</th>
-            <th>__('translation.import_license_number')</th>
-            <th>__('translation.actions')</th>
+            <th>{{ __('translation.importer_id') }}</th>
+            <th>{{ __('translation.account_email')}}</th>
+            <th>{{ __('translation.company_name')}}</th>
+            <th>{{ __('translation.import_license_number')}}</th>
+            <th>{{ __('translation.actions')}}</th>
         </tr>
     </thead>
 </table>
@@ -45,8 +45,7 @@
         $('#importers-table').DataTable({
             processing: true
             , serverSide: true
-            , ajax: '{{ route('
-            importers.data ') }}'
+            , ajax: '{{ route('importers.data') }}'
             , columns: [{
                     data: 'id'
                     , name: 'id'

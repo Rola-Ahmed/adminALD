@@ -27,6 +27,8 @@ return [
 'admins' => 'المشرفون',
 'shippingCompany' => 'شركة الشحن',
 'importers' => 'المستوردون',
+'home'=>'الصفحة'
+
 
 
 ];

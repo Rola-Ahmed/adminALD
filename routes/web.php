@@ -8,6 +8,10 @@ use App\Http\Middleware\Localization;
 
 Route::middleware(Localization::class)->group(function () {
 
+    Route::get('/', function () {
+    return view('auth.login');
+});
+
     Auth::routes();
     // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     // Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('all.users');

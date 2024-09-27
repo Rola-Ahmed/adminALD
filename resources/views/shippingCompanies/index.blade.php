@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @extends('layouts.includes')
 
-@section('subtitle', __('translation.shipping_companies'))
-@section('content_header_title', __('translation.home'))
-@section('content_header_subtitle', __('translation.shipping_companies'))
+@section('subtitle', __('adminlte::menu.shippingCompany'))
+@section('content_header_title', __('adminlte::menu.home'))
+@section('content_header_subtitle', __('adminlte::menu.shippingCompany'))
 
 @section('content_body')
 @if (session('success'))
