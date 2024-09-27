@@ -4,15 +4,15 @@
 {{-- Customize layout sections --}}
 
 @section('subtitle', 'Welcome')
-@section('content_header_title', 'Users')
-@section('content_header_subtitle', 'Users')
+@section('content_header_title', __('translation.users'))
+@section('content_header_subtitle', __('translation.allUsers'))
 
 {{-- Content body: main page content --}}
 
 @section('content_body')
 
 
-@include('includes.localizationBtn')
+{{-- @include('includes.localizat ionBtn') --}}
 
 <table id="users-table" class="display">
     <thead>

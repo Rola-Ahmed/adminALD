@@ -182,7 +182,7 @@
 @section('content_header_subtitle', 'Welcome')
 
 {{-- Content body: main page content --}}
-
+{{-- {{ trans('adminlte::adminlte.login_message') }} --}}
 @section('content_body')
     <p>Welcome to this beautiful admin panel.</p>
 

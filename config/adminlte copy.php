@@ -323,29 +323,36 @@ return [
         [
             'topnav_right' => true,
 
+            // 'text' => __("translation.dashboard"),
             'icon' => 'fas fa-fw fa-globe',
-            'text' =>'currentLang',
-            'url' => '#',
+            // 'text' => 'Dashboard', // Fallback value
+            // 'text' => trans('adminlte::adminlte.currentLang')
+            'text' =>'currentLang'
+            , // Fallback value
+            'url' => 'admin/dashboard',
             'dynamic' => true, // Use this to indicate dynamic text
             'submenu' => [
                 [
-                    'text' => 'en',
+                    'text' => ['translation:profile_key', ['name' => 'User']],
                     'url' => 'localization/en',
                 ],
                
+              
+                
+               
                 [
-                    'text' =>  'ar',
+                    'text' =>  'translation.ar',
                     'url' => 'localization/ar',
 
                 ],
             ],
         ],
 
-        // [
-        //     'text' => 'pages',
-        //     'url' => 'admin/pages',
-        //     'topnav_right' => true,
-        // ],
+        [
+            'text' => 'pages',
+            'url' => 'admin/pages',
+            'topnav_right' => true,
+        ],
         [
             'type' => 'navbar-search',
             'text' => 'search', //placeholder
@@ -355,14 +362,14 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-        // [ 
-        //     'text' => 'Dashboard', 
-        //     'url' => 'admin/dashboard', 
-        //     'icon' => 'fas fa-tachometer-alt', 
-        //     'style'=>'text-start',
-        //     'topnav_right' => true,
+        [ 
+            'text' => 'Dashboard', 
+            'url' => 'admin/dashboard', 
+            'icon' => 'fas fa-tachometer-alt', 
+            'style'=>'text-start',
+            'topnav_right' => true,
 
-        // ], 
+        ], 
     
 
         // Sidebar items:
@@ -382,9 +389,58 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url' => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url' => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
+        // [
+        //     'text' => 'Users',
+        //     'icon' => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one',
+        //             'url' => '#',
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url' => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url' => '#',
+        //                 ],
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url' => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url' => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url' => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url' => '#',
+        //         ],
+        //     ],
+        // ],
         ['header' => 'labels'],
         [
-            'text' => 'important',
+            'text' => 'adminlte::menu.important',
             'icon_color' => 'red',
             'url' => '#',
         ],
@@ -400,32 +456,33 @@ return [
         ],
 
         [
-            'text' => 'userTypes',
+            'text' => 'Users',
             'icon' => 'fas fa-fw fa-users',
             'submenu' => [
                 [
-                    'text' => 'defaultUsers',
+                    'text' => 'All',
+                    'icon_color' => 'cyan',
                     // 'url' => 'users',
                     'route'=>'all.users'
                 ],
                 [
-                    'text' => 'factories',
+                    'text' => 'Factory',
                     'icon_color' => 'cyan',
-                    'url' => 'users',
+                    // 'url' => 'users',
                 ],
                 [
-                    'text' => 'importers',
+                    'text' => 'Importer',
                     'icon_color' => 'cyan',
-                    'url' => 'importers'
+                    'url' => '#',
                 ],
                 
                 [
-                    'text' => 'shippingCompany',
+                    'text' => 'Shipping Company',
                     'icon_color' => 'cyan',
                     'url' => '#',
                 ],
                 [
-                    'text' => 'admins',
+                    'text' => 'Admin',
                     'icon_color' => 'cyan',
                     'url' => '#',
                 ],

@@ -14,6 +14,6 @@ class Importer extends Model
     public $timestamps = true;
     public function user()
     {
-        return $this->belongsTo(User::class); // A factory belongs to a single user
+        return $this->belongsTo(User::class,'user_id','id'); // A factory belongs to a single user
     }
 }

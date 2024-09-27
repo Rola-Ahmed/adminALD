@@ -15,6 +15,8 @@ return [
 
     'ar' => 'arabic',
     'en' => 'English',
-    'dashboard'=>'English'
+    'dashboard'=>'English',
+    'users'=>'Users',
+    'allUsers'=>'All Users'
 
 ];

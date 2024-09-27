@@ -134,36 +134,39 @@
 
 <strong>
     <a href="{{ config('app.company_url', '#') }}">
-        {{ config('app.company_name', 'My company') }}
+        {{ config('app.company_name', 'PIXI Agancy Marcketing') }}
     </a>
 </strong>
 @stop
 
 {{-- Add common Javascript/Jquery code --}}
 
-@push('js')
+{{-- @push('js')
 <script>
     $(document).ready(function() {
         // Add your common script logic here...
     });
 
 </script>
-@endpush
+@endpush --}}
 
 {{-- Add common CSS customizations --}}
 
 @push('css')
 <style type="text/css">
+    :lang(ar) {
+        p ,h1,.nav-link  {
+            direction: rtl;
+            /* Right-to-left direction */
+            text-align: right;
+            /* Align text to the right */
+        }
 
-{{-- You can add AdminLTE customizations here --}}
-/*
-.card-header {
-border-bottom: none;
-}
-.card-title {
-font-weight: 600;
-}
-*/
+    }
+
+    /* .main-sidebar.sidebar-dark-primary {
+        direction: ltr !important;
+    } */
 
 </style>
 @endpush

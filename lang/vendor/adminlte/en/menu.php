@@ -16,4 +16,19 @@ return [
     'important' => 'Important',
     'warning' => 'Warning',
     'information' => 'Information',
+    'currentLang'=>'English',
+    'ar' => 'arabic',
+    'en' => 'English',
+    'users'=>'Users',
+    'allUsers'=>'All Users',
+    'defaultUsers'=>'defaultUsers',
+    'userTypes'=>'User Types',
+    'factories'=>'Factories',
+    'admins'=>'Admins',
+    'shippingCompany'=>'Shipping Company',
+    'importers'=>'Importers',
+
+    
+
 ];
+// 'text' => trans('adminlte::menu.currentLang')
